@@ -1,11 +1,28 @@
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSUserNotificationCenterDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func showNotification() -> Void {
+        let notification = NSUserNotification()
+        notification.title = "SreenBreak Notification"
+        notification.subtitle = "Testing....01...10...11..."
+        notification.soundName = NSUserNotificationDefaultSoundName
+        NSUserNotificationCenter.default.delegate = self
+        NSUserNotificationCenter.default.deliver(notification)
+    }
+    
+    func userNotificationCenter(_ center: NSUserNotificationCenter,
+                                shouldPresent notification: NSUserNotification) -> Bool {
+        return true
+    }
 
+    @IBAction func sendNotificationButtonClicked(_ sender: Any) {
+        showNotification()
+    }
 }
 
 extension ViewController {
