@@ -6,15 +6,20 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
         super.viewDidLoad()
     }
     
+    // MARK: Notification
+    
     func showNotification() -> Void {
         let notification = NSUserNotification()
         
         notification.title = "SreenBreak Notification"
         notification.subtitle = "Testing....01...10...11..."
         notification.soundName = NSUserNotificationDefaultSoundName
+        notification.deliveryDate = Date(timeIntervalSinceNow: 5)
+        
+        notification.deliveryRepeatInterval = DateComponents(minute: 1)
         
         NSUserNotificationCenter.default.delegate = self
-        NSUserNotificationCenter.default.deliver(notification)
+        NSUserNotificationCenter.default.scheduleNotification(notification)
     }
     
     func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
@@ -26,6 +31,11 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
     @IBAction func sendNotificationButtonClicked(_ sender: Any) {
         showNotification()
     }
+    
+    @IBAction func quitButtonClicked(_ sender: Any) {
+        NSApplication.shared.terminate(sender)
+    }
+    
 }
 
 // MARK: Extensions

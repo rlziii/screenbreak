@@ -27,7 +27,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Empty
+        for notification in NSUserNotificationCenter.default.scheduledNotifications {
+            NSUserNotificationCenter.default.removeScheduledNotification(notification)
+        }
     }
     
     @objc func togglePopover(_ sender: Any?) {

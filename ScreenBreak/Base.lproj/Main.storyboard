@@ -707,7 +707,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="sendNotificationButtonClicked:" target="XfG-lQ-9wD" id="CTb-gz-T7Q"/>
+                                            <action selector="sendNotificationButtonClicked:" target="XfG-lQ-9wD" id="aY2-NB-ANx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -718,11 +718,23 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fdY-WV-qR9">
+                                <rect key="frame" x="400" y="13" width="66" height="32"/>
+                                <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7o5-HY-K0W">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="quitButtonClicked:" target="XfG-lQ-9wD" id="5pe-rR-jqh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="ck1-8w-rE1" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="4fH-Je-mBP"/>
+                            <constraint firstAttribute="trailing" secondItem="fdY-WV-qR9" secondAttribute="trailing" constant="20" id="BuD-Sx-EO5"/>
                             <constraint firstAttribute="bottom" secondItem="E4E-Gh-fWu" secondAttribute="bottom" constant="20" id="DRw-gH-t5u"/>
                             <constraint firstItem="E4E-Gh-fWu" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Gfb-sf-pGh"/>
+                            <constraint firstAttribute="bottom" secondItem="fdY-WV-qR9" secondAttribute="bottom" constant="20" id="idO-Is-Gas"/>
                             <constraint firstItem="ck1-8w-rE1" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="iuY-3N-6yD"/>
                         </constraints>
                     </view>
