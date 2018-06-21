@@ -8,29 +8,35 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
     
     func showNotification() -> Void {
         let notification = NSUserNotification()
+        
         notification.title = "SreenBreak Notification"
         notification.subtitle = "Testing....01...10...11..."
         notification.soundName = NSUserNotificationDefaultSoundName
+        
         NSUserNotificationCenter.default.delegate = self
         NSUserNotificationCenter.default.deliver(notification)
     }
     
-    func userNotificationCenter(_ center: NSUserNotificationCenter,
-                                shouldPresent notification: NSUserNotification) -> Bool {
+    func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
         return true
     }
 
+    // MARK: Actions
+    
     @IBAction func sendNotificationButtonClicked(_ sender: Any) {
         showNotification()
     }
 }
 
+// MARK: Extensions
+
 extension ViewController {
     static func freshController() -> ViewController {
         let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
         let identifier = NSStoryboard.SceneIdentifier(rawValue: "ViewController")
+        
         guard let viewController = storyboard.instantiateController(withIdentifier: identifier) as? ViewController else {
-            fatalError("Cannot find ViewController for instantiation.")
+            fatalError("freshController(): Cannot find ViewController for instantiation.")
         }
         
         return viewController

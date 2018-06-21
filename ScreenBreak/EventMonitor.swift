@@ -1,6 +1,9 @@
 import Cocoa
 
 public class EventMonitor {
+    
+    // MARK: Properties
+    
     private var monitor: Any?
     private let mask: NSEvent.EventTypeMask
     private let handler: (NSEvent?) -> Void
@@ -19,9 +22,9 @@ public class EventMonitor {
     }
     
     public func stop() {
-        if monitor != nil {
-            NSEvent.removeMonitor(monitor!)
-            monitor = nil
+        if let monitor = monitor {
+            NSEvent.removeMonitor(monitor)
+            self.monitor = nil
         }
     }
 }

@@ -3,6 +3,8 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    // MARK: Properties
+    
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     
     let popover = NSPopover()
@@ -11,7 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = statusItem.button {
-            button.image = NSImage(named:NSImage.Name("StatusBarIcon"))
+            button.image = NSImage(named: NSImage.Name("StatusBarIcon"))
             button.action = #selector(togglePopover(_:))
         }
         
@@ -25,23 +27,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
+        // Empty
     }
     
     @objc func togglePopover(_ sender: Any?) {
         if popover.isShown {
             closePopover(sender: sender)
         } else {
-            showPopover(sender: sender)
+            openPopover(sender: sender)
         }
     }
     
-    func showPopover(sender: Any?) {
+    func openPopover(sender: Any?) {
         if let button = statusItem.button {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
         }
         
         eventMonitor?.start()
-
     }
     
     func closePopover(sender: Any?) {
