@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80A3A3F120DB48E800B789B8 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A3A3F020DB48E800B789B8 /* EventMonitor.swift */; };
 		80B20DDF20DB38BE00436C13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B20DDE20DB38BE00436C13 /* AppDelegate.swift */; };
 		80B20DE120DB38BE00436C13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B20DE020DB38BE00436C13 /* ViewController.swift */; };
 		80B20DE320DB38BF00436C13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B20DE220DB38BF00436C13 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80A3A3F020DB48E800B789B8 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		80B20DDB20DB38BE00436C13 /* ScreenBreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenBreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B20DDE20DB38BE00436C13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B20DE020DB38BE00436C13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				80B20DE020DB38BE00436C13 /* ViewController.swift */,
 				80B20DE220DB38BF00436C13 /* Assets.xcassets */,
 				80B20DE420DB38BF00436C13 /* Main.storyboard */,
+				80A3A3F020DB48E800B789B8 /* EventMonitor.swift */,
 				80B20DE720DB38BF00436C13 /* Info.plist */,
 				80B20DE820DB38BF00436C13 /* ScreenBreak.entitlements */,
 			);
@@ -133,6 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A3A3F120DB48E800B789B8 /* EventMonitor.swift in Sources */,
 				80B20DE120DB38BE00436C13 /* ViewController.swift in Sources */,
 				80B20DDF20DB38BE00436C13 /* AppDelegate.swift in Sources */,
 			);
