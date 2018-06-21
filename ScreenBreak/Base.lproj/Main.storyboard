@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -689,35 +688,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ck1-8w-rE1">
-                                <rect key="frame" x="178" y="126" width="124" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Hello, ScreenBreak!" id="KHa-ko-fyc">
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t1t-DY-LhQ">
+                                <rect key="frame" x="168" y="43" width="145" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Send Notification" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0t9-BI-IKF">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E4E-Gh-fWu">
-                                <rect key="frame" x="174" y="20" width="133" height="21"/>
-                                <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t1t-DY-LhQ">
-                                        <rect key="frame" x="-6" y="-7" width="145" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Send Notification" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0t9-BI-IKF">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="sendNotificationButtonClicked:" target="XfG-lQ-9wD" id="aY2-NB-ANx"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <visibilityPriorities>
-                                    <integer value="1000"/>
-                                </visibilityPriorities>
-                                <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
-                                </customSpacing>
-                            </stackView>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="sendNotificationButtonClicked:" target="XfG-lQ-9wD" id="aY2-NB-ANx"/>
+                                </connections>
+                            </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fdY-WV-qR9">
                                 <rect key="frame" x="400" y="13" width="66" height="32"/>
                                 <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7o5-HY-K0W">
@@ -728,14 +709,91 @@
                                     <action selector="quitButtonClicked:" target="XfG-lQ-9wD" id="5pe-rR-jqh"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6YG-SK-jLE">
+                                <rect key="frame" x="18" y="213" width="139" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="135" id="QyY-Sw-d4A"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Stand break reminder:" id="wkb-Tg-WhO">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="L4J-5L-Vmn">
+                                <rect key="frame" x="18" y="176" width="139" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="135" id="gb7-KM-AyF"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Eye break reminder:" id="85w-m7-iOZ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AxR-Ec-mkp">
+                                <rect key="frame" x="165" y="206" width="103" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="JFQ-se-d6N"/>
+                                </constraints>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="SZl-OL-6Yy">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <objectValues>
+                                        <string>Item 1</string>
+                                        <string>Item 2</string>
+                                        <string>Item 3</string>
+                                    </objectValues>
+                                </comboBoxCell>
+                            </comboBox>
+                            <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="53F-Xo-o9t">
+                                <rect key="frame" x="165" y="166" width="103" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="0B7-Pw-Fli"/>
+                                </constraints>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="6OF-yk-Rlg">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <objectValues>
+                                        <string>Item 1</string>
+                                        <string>Item 2</string>
+                                        <string>Item 3</string>
+                                    </objectValues>
+                                </comboBoxCell>
+                            </comboBox>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wWt-bz-BGL">
+                                <rect key="frame" x="18" y="140" width="115" height="18"/>
+                                <buttonCell key="cell" type="check" title="Launch at login" bezelStyle="regularSquare" imagePosition="right" state="on" inset="2" id="iVf-fO-XQD">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ck1-8w-rE1">
+                                <rect key="frame" x="200" y="243" width="81" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ScreenBreak" id="KHa-ko-fyc">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="ck1-8w-rE1" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="4fH-Je-mBP"/>
+                            <constraint firstItem="wWt-bz-BGL" firstAttribute="top" secondItem="L4J-5L-Vmn" secondAttribute="bottom" constant="20" id="7LT-vE-c0U"/>
+                            <constraint firstItem="wWt-bz-BGL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="8Q6-QE-z79"/>
                             <constraint firstAttribute="trailing" secondItem="fdY-WV-qR9" secondAttribute="trailing" constant="20" id="BuD-Sx-EO5"/>
-                            <constraint firstAttribute="bottom" secondItem="E4E-Gh-fWu" secondAttribute="bottom" constant="20" id="DRw-gH-t5u"/>
-                            <constraint firstItem="E4E-Gh-fWu" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Gfb-sf-pGh"/>
+                            <constraint firstItem="AxR-Ec-mkp" firstAttribute="leading" secondItem="6YG-SK-jLE" secondAttribute="trailing" constant="10" id="Jxz-U3-uwB"/>
+                            <constraint firstItem="L4J-5L-Vmn" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="LiL-Rd-nLO"/>
+                            <constraint firstItem="AxR-Ec-mkp" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="MsW-yy-FKT"/>
+                            <constraint firstItem="ck1-8w-rE1" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="Uus-nt-HE7"/>
+                            <constraint firstItem="ck1-8w-rE1" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="V1M-as-fiX"/>
+                            <constraint firstItem="6YG-SK-jLE" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="VE3-er-kLh"/>
+                            <constraint firstItem="53F-Xo-o9t" firstAttribute="top" secondItem="AxR-Ec-mkp" secondAttribute="bottom" constant="20" id="VyL-Vv-qzJ"/>
+                            <constraint firstItem="53F-Xo-o9t" firstAttribute="leading" secondItem="L4J-5L-Vmn" secondAttribute="trailing" constant="10" id="dCi-pd-frh"/>
                             <constraint firstAttribute="bottom" secondItem="fdY-WV-qR9" secondAttribute="bottom" constant="20" id="idO-Is-Gas"/>
-                            <constraint firstItem="ck1-8w-rE1" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="iuY-3N-6yD"/>
+                            <constraint firstItem="L4J-5L-Vmn" firstAttribute="top" secondItem="6YG-SK-jLE" secondAttribute="bottom" constant="20" id="n9t-8l-WMt"/>
+                            <constraint firstItem="6YG-SK-jLE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="yod-2f-vY0"/>
                         </constraints>
                     </view>
                 </viewController>

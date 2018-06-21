@@ -8,13 +8,13 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
     
     // MARK: Notification
     
-    func showNotification() -> Void {
+    func createNotification() -> Void {
         let notification = NSUserNotification()
         
         notification.title = "SreenBreak Notification"
         notification.subtitle = "Testing....01...10...11..."
         notification.soundName = NSUserNotificationDefaultSoundName
-        notification.deliveryDate = Date(timeIntervalSinceNow: 5)
+        notification.deliveryDate = Date(timeIntervalSinceNow: 1)
         
         notification.deliveryRepeatInterval = DateComponents(minute: 1)
         
@@ -29,7 +29,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
     // MARK: Actions
     
     @IBAction func sendNotificationButtonClicked(_ sender: Any) {
-        showNotification()
+        createNotification()
     }
     
     @IBAction func quitButtonClicked(_ sender: Any) {
