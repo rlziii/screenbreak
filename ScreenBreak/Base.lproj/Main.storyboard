@@ -732,34 +732,34 @@
                                 </textFieldCell>
                             </textField>
                             <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AxR-Ec-mkp">
-                                <rect key="frame" x="165" y="206" width="103" height="26"/>
+                                <rect key="frame" x="165" y="206" width="153" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="JFQ-se-d6N"/>
+                                    <constraint firstAttribute="width" constant="150" id="JFQ-se-d6N"/>
                                 </constraints>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="SZl-OL-6Yy">
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="SZl-OL-6Yy">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <objectValues>
-                                        <string>Item 1</string>
-                                        <string>Item 2</string>
-                                        <string>Item 3</string>
+                                        <string>every 20 minutes</string>
+                                        <string>every 40 minutes</string>
+                                        <string>every 60 minutes</string>
                                     </objectValues>
                                 </comboBoxCell>
                             </comboBox>
                             <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="53F-Xo-o9t">
-                                <rect key="frame" x="165" y="166" width="103" height="26"/>
+                                <rect key="frame" x="165" y="166" width="153" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="0B7-Pw-Fli"/>
+                                    <constraint firstAttribute="width" constant="150" id="0B7-Pw-Fli"/>
                                 </constraints>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="6OF-yk-Rlg">
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="6OF-yk-Rlg">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <objectValues>
-                                        <string>Item 1</string>
-                                        <string>Item 2</string>
-                                        <string>Item 3</string>
+                                        <string>every 20 minutes</string>
+                                        <string>every 40 minutes</string>
+                                        <string>every 60 minutes</string>
                                     </objectValues>
                                 </comboBoxCell>
                             </comboBox>
