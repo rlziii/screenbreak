@@ -11,8 +11,26 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
     func createNotification() -> Void {
         let notification = NSUserNotification()
         
-        notification.title = "SreenBreak Notification"
-        notification.subtitle = "Testing....01...10...11..."
+        var actions = [NSUserNotificationAction]()
+        let delay5Minutes = NSUserNotificationAction(identifier: "delay5Minutes", title: "Delay 5 minutes")
+        let delay10Minutes = NSUserNotificationAction(identifier: "delay10Minutes", title: "Delay 10 minutes")
+        let delaySkip = NSUserNotificationAction(identifier: "delaySkip", title: "Skip this time")
+        
+        actions.append(delay5Minutes)
+        actions.append(delay10Minutes)
+        actions.append(delaySkip)
+        
+        notification.title = "It's time to stand!"
+//        notification.subtitle = "Testing....01...10...11..."
+//        notification.identifier = "test0001"
+        notification.hasActionButton = true
+        notification.actionButtonTitle = "Delay"
+        notification.otherButtonTitle = "Complete!"
+        notification.additionalActions = actions
+        
+        // WARNING, private API
+        notification.setValue(true, forKey: "_alwaysShowAlternateActionMenu")
+        
         notification.soundName = NSUserNotificationDefaultSoundName
         notification.deliveryDate = Date(timeIntervalSinceNow: 1)
         
